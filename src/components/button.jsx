@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 
-let TYPES = {
+let STYLES = {
 	default: 'btn-secondary',
 	cta: 'btn-primary'
 };
 
-export default ({children, type = 'default', additionalClasses='', ...customAttributes}) => {
-	let cls = classNames('btn', TYPES[type], additionalClasses);
+export default ({children, style = 'default', additionalClasses='', ...customAttributes}) => {
+	let cls = classNames('btn', STYLES[style] || STYLES.default, additionalClasses);
 	return <button class={cls} {...customAttributes}>{children}</button>;
 }

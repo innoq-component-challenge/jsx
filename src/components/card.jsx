@@ -1,4 +1,4 @@
-export default ({ heading, headingLevel, href, children }) => {
+export default ({ heading, headingLevel, footer, href, children }) => {
 	let Heading = `h${headingLevel}`;
 
 	return <section class="card">
@@ -8,5 +8,6 @@ export default ({ heading, headingLevel, href, children }) => {
 			</Heading>
 			<p class="card-text">{children}</p>
 		</div>
+		{footer ? <div class="card-footer">{footer}</div> : ''}
 	</section>;
 }
